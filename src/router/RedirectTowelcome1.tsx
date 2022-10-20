@@ -1,11 +1,11 @@
-import React from 'react'
-import { Empty } from 'antd';
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function RedirectTowelcome1() {
-  return (
-    <div>
-      <Empty />
-    </div>
-  )
+export const RedirectTowelcome1 = () => {
+  const navigate = useNavigate()
+  useEffect(() => {
+    navigate('/')
+  }, [])
+
+  return <div>123211</div>
 }

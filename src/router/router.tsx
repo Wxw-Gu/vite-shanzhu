@@ -1,13 +1,10 @@
-import { createRouter } from '@remix-run/router';
-import React from 'react';
-import { createBrowserRouter, createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home/index'
 import Welcome1 from '../pages/demo2/Welcome1'
 import Welcome2 from '../pages/demo2/Welcome2'
 import Welcome3 from '../pages/demo2/Welcome3'
 import Welcome4 from '../pages/demo2/Welcome4'
-import WelcomeLayout from '../pages/demo2/WelcomeLayout'
-import RedirectUnwelcome1 from '../router/RedirectTowelcome1'
+import { RedirectTowelcome1 } from '../router/RedirectTowelcome1'
 
 // export const router = createBrowserRouter([
 //   {
@@ -24,14 +21,15 @@ import RedirectUnwelcome1 from '../router/RedirectTowelcome1'
 //   },
 // ]);
 
-//createBrowserRouter -> 生成history路由 创建路由实例 在方法中定义路由path和对应的组件
-//createHashRouter -> 创建hash路由
-export const router = createHashRouter([
+// createBrowserRouter -> 生成history路由 创建路由实例 在方法中定义路由path和对应的组件
+// createHashRouter -> 创建hash路由
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
     // errorElement: <RedirectUnwelcome1 />,
     children: [
+      { index: true, element: <RedirectTowelcome1 /> },
       { path: 'welcome1', element: <Welcome1 /> },
       { path: 'welcome1/:id', element: <Welcome1 /> },
       { path: 'welcome2', element: <Welcome2 /> },
@@ -40,16 +38,16 @@ export const router = createHashRouter([
       { path: 'welcome3/:id', element: <Welcome3 /> },
       { path: 'welcome4', element: <Welcome4 /> },
       { path: 'welcome4/:id', element: <Welcome4 /> },
-    ]
+    ],
   },
   {
     path: 'home',
-    element: <Home />
+    element: <Home />,
   },
   {
     path: '*',
-    element: <RedirectUnwelcome1 />
-  }
+    element: <RedirectTowelcome1 />,
+  },
 ])
 
 // export const router = createBrowserRouter(

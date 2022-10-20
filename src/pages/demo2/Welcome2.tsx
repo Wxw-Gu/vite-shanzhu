@@ -1,13 +1,14 @@
+/* eslint-disable no-console */
 import { Button } from 'antd'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 export default function Welcome2() {
-  const [params] = useSearchParams();//获取搜索参数 url ?name=xxx
-  const _parmas = useParams();//路由所需的参数来匹配
-  let id = _parmas.id
+  const [params] = useSearchParams()// 获取搜索参数 url ?name=xxx
+  const _parmas = useParams()// 路由所需的参数来匹配
+  const id = _parmas.id
 
-  const name = params.get('name');
+  const name = params.get('name')
   useEffect(() => {
     console.log('name:', name)
     console.log(params, 'params')
