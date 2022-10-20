@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
-    // errorElement: <RedirectUnwelcome1 />,
+    errorElement: <RedirectTowelcome1 />,
     children: [
       { index: true, element: <RedirectTowelcome1 /> },
       { path: 'welcome1', element: <Welcome1 /> },
@@ -43,10 +43,6 @@ export const router = createBrowserRouter([
   {
     path: 'home',
     element: <Home />,
-  },
-  {
-    path: '*',
-    element: <RedirectTowelcome1 />,
   },
 ])
 

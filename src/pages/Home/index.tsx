@@ -1,17 +1,15 @@
 /*
  * @Author: Wxw
  * @Date: 2022-10-20 10:32:35
- * @LastEditTime: 2022-10-20 14:49:40
+ * @LastEditTime: 2022-10-20 17:49:08
  * @LastEditors: Wxw
- * @Description: 
+ * @Description:
  * @FilePath: \viteDemo\src\pages\Home\index.tsx
  */
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
-import React, { useState } from 'react';
-import { NavLink, Link, Outlet } from 'react-router-dom'
-import Welcome1 from '../demo2/Welcome1'
-import Welcome2 from '../demo2/Welcome2'
+import { MailOutlined } from '@ant-design/icons'
+import { Menu } from 'antd'
+import { useState } from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
 const items = [
   {
     label: '测试菜单',
@@ -25,7 +23,7 @@ const items = [
           {
             label: (<NavLink to="/welcome1">Navigation one</NavLink>),
             key: 'setting:1',
-            //跳转<NavLink to="/welcome/1">Navigation One</NavLink>
+            // 跳转<NavLink to="/welcome/1">Navigation One</NavLink>
           },
           {
             label: (<NavLink to="/welcome2">Navigation two</NavLink>),
@@ -55,14 +53,14 @@ const items = [
   //   icon: <SettingOutlined />,
   //   component: <Welcome2 />,
   // },
-];
+]
 
 export default function Index() {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('mail')
   const onClick = (e) => {
-    console.log('click ', e);
-    setCurrent(e.key);
-  };
+    windows.console.log('click ', e)
+    setCurrent(e.key)
+  }
 
   return (
     <div>
