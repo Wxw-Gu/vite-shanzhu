@@ -1,6 +1,6 @@
 import { createRouter } from '@remix-run/router';
 import React from 'react';
-import { createBrowserRouter, createRoutesFromElements, Outlet, Route } from 'react-router-dom';
+import { createBrowserRouter, createHashRouter } from 'react-router-dom';
 import Home from '../pages/Home/index'
 import Welcome1 from '../pages/demo2/Welcome1'
 import Welcome2 from '../pages/demo2/Welcome2'
@@ -24,20 +24,30 @@ import RedirectUnwelcome1 from '../router/RedirectTowelcome1'
 //   },
 // ]);
 
-export const router = createBrowserRouter([
+//createBrowserRouter -> 生成history路由 创建路由实例 在方法中定义路由path和对应的组件
+//createHashRouter -> 创建hash路由
+export const router = createHashRouter([
   {
     path: '/',
     element: <Home />,
-    errorElement: <RedirectUnwelcome1 />,
+    // errorElement: <RedirectUnwelcome1 />,
     children: [
       { path: 'welcome1', element: <Welcome1 /> },
+      { path: 'welcome1/:id', element: <Welcome1 /> },
       { path: 'welcome2', element: <Welcome2 /> },
+      { path: 'welcome2/:id', element: <Welcome2 /> },
       { path: 'welcome3', element: <Welcome3 /> },
+      { path: 'welcome3/:id', element: <Welcome3 /> },
       { path: 'welcome4', element: <Welcome4 /> },
+      { path: 'welcome4/:id', element: <Welcome4 /> },
     ]
   },
   {
     path: 'home',
+    element: <Home />
+  },
+  {
+    path: '*',
     element: <RedirectUnwelcome1 />
   }
 ])
