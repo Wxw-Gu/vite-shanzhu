@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { Button } from 'antd'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
+
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 export default function Welcome2() {
