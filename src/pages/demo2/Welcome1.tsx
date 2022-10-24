@@ -27,7 +27,7 @@ export default function Welcome1() {
   // }
 
   const [state, dispatch] = useReducer(reducer, {
-    name: '全局的名称',
+    name: '全局的名称1',
   })
 
   return (
