@@ -1,14 +1,15 @@
 /*
  * @Author: Wxw
  * @Date: 2022-10-20 10:32:35
- * @LastEditTime: 2022-10-20 17:49:08
+ * @LastEditTime: 2022-10-24 09:51:37
  * @LastEditors: Wxw
  * @Description:
  * @FilePath: \viteDemo\src\pages\Home\index.tsx
  */
 import { MailOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
-import { useState } from 'react'
+import React, { useState } from 'react'
+
 import { NavLink, Outlet } from 'react-router-dom'
 const items = [
   {
@@ -58,7 +59,7 @@ const items = [
 export default function Index() {
   const [current, setCurrent] = useState('mail')
   const onClick = (e) => {
-    windows.console.log('click ', e)
+    window.console.log('click ', e)
     setCurrent(e.key)
   }
 

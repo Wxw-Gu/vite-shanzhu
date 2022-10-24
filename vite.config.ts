@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
+import Unocss from 'unocss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   root: process.cwd(),
-  plugins: [react()],
+  plugins: [Unocss(), react()],
   server: {
     port: 8888,
     open: 'http://localhost:8888',

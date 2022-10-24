@@ -1,8 +1,9 @@
-import { StrictMode } from 'react'
+import React, { StrictMode, useReducer } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 // import App from './src/App'
 import { router } from './src/router/router'
+import 'virtual:uno.css'
 
 const container = document.getElementById('root') as HTMLElement
 const root = createRoot(container)
@@ -11,6 +12,6 @@ const root = createRoot(container)
 // React.StrictMode严格模式的用处是检查出开发中不规范的地方  Effect会执行两次
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
   </StrictMode>,
 )
