@@ -1,3 +1,13 @@
+/*
+ * @Author: xinwei.wang xinwei.wang@datatist.com
+ * @Date: 2022-10-28 23:37:18
+ * @LastEditors: xinwei.wang xinwei.wang@datatist.com
+ * @LastEditTime: 2022-10-29 00:10:45
+ * @FilePath: \viteDemo\src\pages\demo2\Welcome1.tsx
+ * @Description:
+ *
+ * Copyright (c) 2022 by xinwei.wang xinwei.wang@datatist.com, All Rights Reserved.
+ */
 import { Button } from 'antd'
 import React, { useContext, useEffect, useReducer } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -32,14 +42,16 @@ export default function Welcome1() {
 
   return (
     <homeContext.Provider value={{ state, dispatch }}>
-    <div flex justify-center items-center after="content-[hi] b-1 b-red" before="content-[hi] b-1 b-red" shadow >
-      <header hover:bg-red duration-2000 w-100px b-1 b-red h-100px rd-50></header>
-      <main grow-1 b-1 b-blue h-100px>
+      <div flex justify-center items-center after="content-[hi] b-1 b-red" before="content-[hi] b-1 b-red" shadow >
+        <header hover:bg-red duration-2000 w-100px b-1 b-red h-100px rd-50 >
+          <div flex-none>ddddsadasdasdasd</div>
+        </header>
+        <main grow-1 b-1 b-blue h-100px>
           <WelCome11></WelCome11>
-        {/* <Button onClick={go}>跳转到WEelcome2</Button> */}
-      </main>
-      <footer w-200px b-1 b-black h-55px></footer>
-    </div>
+          {/* <Button onClick={go}>跳转到WEelcome2</Button> */}
+        </main>
+        <footer w-200px b-1 b-black h-55px></footer>
+      </div>
     </homeContext.Provider>
   )
 }

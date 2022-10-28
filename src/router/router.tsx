@@ -1,10 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom'
+import React from 'react'
 import Home from '../pages/Home/index'
 import Welcome1 from '../pages/demo2/Welcome1'
 import Welcome2 from '../pages/demo2/Welcome2'
 import Welcome3 from '../pages/demo2/Welcome3'
 import Welcome4 from '../pages/demo2/Welcome4'
 import { RedirectTowelcome1 } from '../router/RedirectTowelcome1'
+import WelcomeLayout from '../pages/demo2/WelcomeLayout'
 
 // export const router = createBrowserRouter([
 //   {
@@ -38,6 +40,7 @@ export const router = createBrowserRouter([
       { path: 'welcome3/:id', element: <Welcome3 /> },
       { path: 'welcome4', element: <Welcome4 /> },
       { path: 'welcome4/:id', element: <Welcome4 /> },
+      { path: 'welcomeLayout', element: <WelcomeLayout /> },
     ],
   },
   {
