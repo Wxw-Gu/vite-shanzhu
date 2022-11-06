@@ -2,6 +2,7 @@
   "extends": "@antfu",
   "rules": {
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    // "curly":"off", //关闭一行代码中的大括号
   }
 }
