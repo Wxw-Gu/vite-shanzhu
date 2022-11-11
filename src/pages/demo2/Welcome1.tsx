@@ -1,13 +1,3 @@
-/*
- * @Author: xinwei.wang xinwei.wang@datatist.com
- * @Date: 2022-10-28 23:37:18
- * @LastEditors: xinwei.wang xinwei.wang@datatist.com
- * @LastEditTime: 2022-10-29 00:10:45
- * @FilePath: \viteDemo\src\pages\demo2\Welcome1.tsx
- * @Description:
- *
- * Copyright (c) 2022 by xinwei.wang xinwei.wang@datatist.com, All Rights Reserved.
- */
 import { Button } from 'antd'
 import React, { useContext, useEffect, useReducer } from 'react'
 import { useNavigate } from 'react-router-dom'

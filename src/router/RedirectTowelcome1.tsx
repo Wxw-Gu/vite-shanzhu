@@ -8,5 +8,33 @@ export const RedirectTowelcome1 = () => {
     navigate('/')
   }, [])
 
-  return <div>123211</div>
+  // useEffect(() => {
+  //   const change = (e) => {
+  //     window.console.log(e)
+  //   }
+  //   window.addEventListener('mousemove', change)
+  //   window.addEventListener('click', change)
+  //   return () => {
+  //     window.removeEventListener('mousemove', change)
+  //     window.removeEventListener('click', change)
+  //   }
+  // }, [])
+
+  useEffect(() => {
+    let timer: any = null
+    const change = () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        window.console.log('停止了')
+      }, 3000)
+    }
+    window.addEventListener('mousemove', change)
+    window.addEventListener('click', change)
+    return () => {
+      window.removeEventListener('mousemove', change)
+      window.removeEventListener('click', change)
+    }
+  }, [])
+
+  return <div h-screen>123211</div>
 }
