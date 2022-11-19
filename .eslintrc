@@ -1,8 +1,16 @@
 {
   "extends": "@antfu",
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
   "rules": {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
+      "react/self-closing-comp": [
+        "error"
+      ]
     // "curly":"off", //关闭一行代码中的大括号
   }
 }
