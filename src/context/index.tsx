@@ -1,3 +1,4 @@
 import { createContext } from 'react'
 
-export const homeContext = createContext({})
+// todo 这里any
+export const homeContext: any = createContext({ })

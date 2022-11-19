@@ -1,11 +1,3 @@
-/*
- * @Author: Wxw
- * @Date: 2022-10-20 10:32:35
- * @LastEditTime: 2022-11-19 14:43:07
- * @LastEditors: Wxw
- * @Description:
- * @FilePath: \山竹\src\pages\Home\index.tsx
- */
 import { MailOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
 import React, { useState } from 'react'
@@ -22,38 +14,18 @@ const items = [
         label: 'group',
         children: [
           {
-            label: (<NavLink to="/welcome1">Navigation one</NavLink>),
-            key: 'setting:1',
+            label: (<NavLink to="/welcome/1">去welcome1</NavLink>),
+            key: 'welcome1',
             // 跳转<NavLink to="/welcome/1">Navigation One</NavLink>
           },
           {
-            label: (<NavLink to="/welcome2">Navigation two</NavLink>),
-            key: 'setting:2',
+            label: (<NavLink to="/welcome/2">去welcome2</NavLink>),
+            key: 'welcome2',
           },
         ],
       },
-      // {
-      //   type: 'group',
-      //   label: (<NavLink to="/welcome/2">Navigation two</NavLink>),
-      //   children: [
-      //     {
-      //       label: 'Option 3',
-      //       key: 'setting:3',
-      //     },
-      //     {
-      //       label: 'Option 4',
-      //       key: 'setting:4',
-      //     },
-      //   ],
-      // },
     ],
   },
-  // {
-  //   label: <NavLink to="/welcome/2">Navigation Two</NavLink>,
-  //   key: 'SubMenu',
-  //   icon: <SettingOutlined />,
-  //   component: <Welcome2 />,
-  // },
 ]
 
 export default function Index() {
@@ -66,8 +38,8 @@ export default function Index() {
   return (
     <div>
       {/* 配置路由 */}
-      {/* <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}></Menu> */}
-      <Outlet></Outlet>
+      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+      <Outlet />
       {/* <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} /> */}
     </div>
   )

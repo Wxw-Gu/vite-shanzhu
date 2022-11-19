@@ -1,6 +1,6 @@
 import { Button } from 'antd'
-import React, { useContext, useEffect } from 'react'
-import { homeContext } from '../../context/index'
+import React, { useContext } from 'react'
+import { homeContext } from '../context/index'
 
 export const WelCome11: React.FC = () => {
   const { state, dispatch } = useContext(homeContext)
