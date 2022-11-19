@@ -1,10 +1,10 @@
 /*
  * @Author: Wxw
  * @Date: 2022-10-20 10:32:35
- * @LastEditTime: 2022-10-24 09:51:37
+ * @LastEditTime: 2022-11-19 14:43:07
  * @LastEditors: Wxw
  * @Description:
- * @FilePath: \viteDemo\src\pages\Home\index.tsx
+ * @FilePath: \山竹\src\pages\Home\index.tsx
  */
 import { MailOutlined } from '@ant-design/icons'
 import { Menu } from 'antd'
@@ -66,17 +66,7 @@ export default function Index() {
   return (
     <div>
       {/* 配置路由 */}
-      <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}>
-        {/* <Menu.Item key="mail">
-          <NavLink to="/welcome/1">Navigation one</NavLink>
-        </Menu.Item>
-        <Menu.Item key="app">
-          <NavLink to="/welcome/2">Navigation Two</NavLink>
-        </Menu.Item>
-        <Menu.Item key="SubMenu">
-          <NavLink to="/welcome/3">Navigation Three - Submenu</NavLink>
-        </Menu.Item> */}
-      </Menu>
+      {/* <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items}></Menu> */}
       <Outlet></Outlet>
       {/* <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} /> */}
     </div>
