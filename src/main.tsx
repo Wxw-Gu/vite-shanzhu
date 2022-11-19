@@ -9,6 +9,7 @@ import Welcome4 from './pages/demo2/Welcome4'
 import WelcomeLayout from './pages/demo2/WelcomeLayout'
 import Home from './pages/Home'
 import { RedirectToWelcome1 } from './components/ErrorPage'
+import Demo from './components/demo'
 
 const container = document.getElementById('root') as HTMLElement
 const root = createRoot(container)
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
             element: (
             <div>
               1<NavLink to='/welcome/2'>下一页</NavLink>
+              <Demo></Demo>
             </div>
             ),
           },
