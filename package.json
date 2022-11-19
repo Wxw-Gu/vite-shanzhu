@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite --open",
-    "build": "vite build",
+    "build": "vite build --base=/vite-shanzhu/",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
