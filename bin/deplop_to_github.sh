@@ -4,7 +4,7 @@ npm run build
 cd dist
 git init
 git add .
-git commit -m deploy
-git remote add origin git@github.com:Wxw-Gu/vite-shanzhu.git
+git commit -m deploy1
+git remote add origin git@github.com:Wxw-Gu/react-mangosteen-preview.git
 git push -f origin master:master
 cd -
