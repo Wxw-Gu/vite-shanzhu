@@ -22,6 +22,8 @@ export const Welcome1: React.FC = () => {
 
   const [state, dispatch] = useReducer(reducer, {
     name: '全局的名称1',
+    age: 14,
+    url: '1323123',
   })
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export const Welcome1: React.FC = () => {
   }, [])
 
   return (
-    <homeContext.Provider value={{ state, dispatch }}>
+    <homeContext.Provider value={{ ...state, dispatch }}>
       <div flex justify-center items-center after="content-[hi] b-1 b-red" before="content-[hi] b-1 b-red" shadow >
         <header hover:bg-red duration-2000 w-100px b-1 b-red h-100px rd-50 >
           <img id="image" h-100px src=''/>

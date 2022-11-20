@@ -1,4 +1,10 @@
 import { createContext } from 'react'
 
-// todo 这里any
-export const homeContext: any = createContext({ })
+interface AppContextInterface {
+  name: string
+  age: number
+  url: string
+  dispatch: ({ type: string, name: any }) => void
+}
+
+export const homeContext = createContext<AppContextInterface | null>(null)
