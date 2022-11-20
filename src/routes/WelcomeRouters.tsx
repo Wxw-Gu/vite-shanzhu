@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { WelcomeLayout } from '../layouts/WelcomeLayout'
 import { Welcome1 } from '../pages/Welcome1'
 import { Welcome2 } from '../pages/Welcome2'
 import { Welcome3 } from '../pages/Welcome3'
@@ -8,9 +8,8 @@ import { Welcome4 } from '../pages/Welcome4'
 export const welcomeRouters = {
   // { index: true, element: <div>请选择123</div> }, // 路径为/时显示
   path: 'welcome',
-  element: <div><Outlet /></div>,
+  element: <WelcomeLayout />,
   children: [
-    { index: true, element: <div>空</div> },
     {
       path: '1',
       element: <Welcome1 />,
