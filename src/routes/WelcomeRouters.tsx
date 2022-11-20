@@ -6,9 +6,9 @@ import { Welcome3 } from '../pages/Welcome3'
 import { Welcome4 } from '../pages/Welcome4'
 
 export const welcomeRouters = {
-  // { index: true, element: <div>请选择123</div> }, // 路径为/时显示
   path: 'welcome',
   element: <WelcomeLayout />,
+  redirect: 'welcome1',
   children: [
     {
       path: '1',
