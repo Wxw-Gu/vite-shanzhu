@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { animated, useTransition } from '@react-spring/web'
 import type { CSSProperties, FC, ReactNode } from 'react'
 import { Link, useLocation, useOutlet } from 'react-router-dom'
