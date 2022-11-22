@@ -9,7 +9,7 @@ const LinkMap: Record<string, string> = {
   '/welcome/1': '/welcome/2',
   '/welcome/2': '/welcome/3',
   '/welcome/3': '/welcome/4',
-  '/welcome/4': '/welcome/1',
+  '/welcome/4': '/home',
 }
 
 export const WelcomeLayout: FC = () => {
@@ -48,6 +48,16 @@ export const WelcomeLayout: FC = () => {
     }
   }, [direction])
 
+  const skip = () => {
+    localStorage.setItem('hasRead', 'yes')
+  }
+
+  const nextPage = () => {
+    if (location.pathname === '/welcome/4') {
+      skip()
+    }
+  }
+
   return <div className="bg-#5f34bf" h-screen flex flex-col items-stretch pb-16px relative>
     <header shrink-0 text-center pt-64px>
       <img src={logo} w-64px h-69px />
@@ -63,8 +73,8 @@ export const WelcomeLayout: FC = () => {
       )}
     </main>
     <footer shrink-0 text-center text-24px text-white grid grid-cols-3 grid-rows-1>
-      <Link style={{ gridArea: '1 / 2 / 2 / 3' }} to={LinkMap[location.pathname]}>下一页</Link>
-      <Link style={{ gridArea: '1 / 3 / 2 / 4' }} to=''>跳过</Link>
+      <Link style={{ gridArea: '1 / 2 / 2 / 3' }} to={LinkMap[location.pathname]} onClick={nextPage}>下一页</Link>
+      <Link style={{ gridArea: '1 / 3 / 2 / 4' }} to='/home' onClick={skip}>跳过</Link>
     </footer>
   </div>
 }
