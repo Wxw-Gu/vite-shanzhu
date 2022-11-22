@@ -4,6 +4,7 @@ import type { FC, ReactNode } from 'react'
 import { Link, useLocation, useNavigate, useOutlet } from 'react-router-dom'
 import logo from 'assets/images/logo.svg'
 import { useSwipe } from '../hooks/useSwipe'
+import { useLocalStore } from '../stores/useLocalStore'
 
 const LinkMap: Record<string, string> = {
   '/welcome/1': '/welcome/2',
@@ -24,6 +25,7 @@ export const WelcomeLayout: FC = () => {
   const outlet = useOutlet()
   const [extraStyle, setExtraStyle] = useState<{ position: 'relative' | 'absolute' }>({ position: 'relative' })
   map.current[location.pathname] = outlet
+  const { setHasReadWelcomes } = useLocalStore()
   const transitions = useTransition(location.pathname, {
     from: { transform: location.pathname === '/welcome/1' ? 'translateX(0%)' : 'translateX(100%)' },
     enter: { transform: 'translateX(0%)' },
@@ -49,7 +51,7 @@ export const WelcomeLayout: FC = () => {
   }, [direction])
 
   const skip = () => {
-    localStorage.setItem('hasRead', 'yes')
+    setHasReadWelcomes(true)
   }
 
   const nextPage = () => {
