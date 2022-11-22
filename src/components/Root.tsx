@@ -7,7 +7,7 @@ export const Root: React.FC = () => {
 
   // fixme 测试
   if (hasRead === 'yes') {
-    return <Navigate to='/home'/>
+    return <Navigate to='/home1'/>
   } else {
     return <Navigate to='/welcome/1'/>
   }
