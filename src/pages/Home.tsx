@@ -2,13 +2,14 @@ import useSWR from 'swr'
 import axios from 'axios'
 import p from '../assets/images/p.svg'
 import add from '../assets/icons/add.svg'
+import { ajax } from '../lib/ajax'
 export const Home: React.FC = () => {
   const { data: meData, error: meError } = useSWR('/api/v1/me', (path) => {
-    return axios.get(`http://121.196.236.94:8080${path}`)
+    return ajax.get(path)
   })
 
   const { data: itemsData, error: itemsError } = useSWR(meData && '/api/v1/items', (path) => {
-    return axios.get(`http://121.196.236.94:8080${path}`)
+    return ajax.get(path)
   })
 
   return (
