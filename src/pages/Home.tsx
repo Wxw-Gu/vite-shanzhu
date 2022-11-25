@@ -1,16 +1,27 @@
 import useSWR from 'swr'
-import axios from 'axios'
+import _ from 'lodash'
+import { Navigate } from 'react-router-dom'
 import p from '../assets/images/p.svg'
 import add from '../assets/icons/add.svg'
 import { ajax } from '../lib/ajax'
 export const Home: React.FC = () => {
-  const { data: meData, error: meError } = useSWR('/api/v1/me', (path) => {
-    return ajax.get(path)
+  const { data: meData, error: meError } = useSWR('/api/v1/me', async (path) => {
+    return (await ajax.get<Resource<User>>(path)).data.resource
   })
 
-  const { data: itemsData, error: itemsError } = useSWR(meData && '/api/v1/items', (path) => {
-    return ajax.get(path)
+  const { data: itemsData, error: itemsError } = useSWR(meData && '/api/v1/items', async (path) => {
+    return (await ajax.get<Resources<Item>>(path)).data
   })
+
+  const isLoadingMe = !meData && !meError
+  const isLoadingItems = meData && !itemsData && !itemsError
+
+  if (isLoadingMe || isLoadingItems) {
+    return <div>loading...</div>
+  }
+  if (!_.isEmpty(itemsData?.resources)) {
+    return <Navigate to='/items' />
+  }
 
   return (
     <div>
