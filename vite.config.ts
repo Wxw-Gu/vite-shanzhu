@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import Unocss from 'unocss/vite'
 import react from '@vitejs/plugin-react'
 import { viteMockServe } from 'vite-plugin-mock'
+import { svgsprites } from './vite_plugins/svgsprites'
 
 export default defineConfig(({ command }) => ({
   define: {
@@ -16,6 +17,7 @@ export default defineConfig(({ command }) => ({
       mockPath: 'mock',
       localEnabled: command === 'serve',
     }),
+    svgsprites(),
   ],
   server: {
     host: true,
