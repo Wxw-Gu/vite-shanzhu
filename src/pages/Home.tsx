@@ -3,7 +3,7 @@ import React from 'react'
 export const Home: React.FC = () => {
   return (
     <div>
-      Home12
+      Home123
     </div>
   )
 }
